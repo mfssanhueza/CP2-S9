@@ -5,6 +5,7 @@ class Table
     @income = income.map(&:to_i)
   end
 end
+
 table_list = []
 
 file = File.open('casino.txt', 'r')
