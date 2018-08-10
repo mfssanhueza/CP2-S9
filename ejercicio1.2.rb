@@ -4,6 +4,7 @@ class Table
     @name = name
     @income = income.map(&:to_i)
   end
+
 end
 
 table_list = []
@@ -15,14 +16,14 @@ file.readlines.each do |ele|
 end
 file.close
 
-#OPCIÓN 1
+# OPTION 1
 # def max_value(obj)
 #   table = obj.name
 #   max = obj.income.max
 #   day = obj.income.index(max)
 #   puts "La máxima recaudación de la #{table} se logró el día #{day+1} y fue de $#{max}."
 # end
-#max_value(table_list[0])
+# max_value(table_list[0])
 
 def max_value(list)
   list.each_with_index do |_ele, index|
@@ -39,7 +40,7 @@ def average(list)
     average << list[index].income.inject {|sum,x| sum + x}.to_f/list[index].income.size
   end
   final_average = average.inject { |sum, x| sum + x }.to_f / average.size
-  puts "El promedio de lo recaudado en total es de $#{final_average}."
+  puts "El promedio de lo recaudado en todas mesas es de $#{final_average}."
 end
 
 max_value(table_list)
